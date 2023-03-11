@@ -5,15 +5,24 @@ import pro.sky.receptapp.dto.RecipeDTO;
 import pro.sky.receptapp.model.Recipe;
 import pro.sky.receptapp.service.RecipeService;
 
-   @RestController
+import java.util.List;
+
+@RestController
 
    @RequestMapping("/recipe")
    public class RecipeController {
 
+
    private final RecipeService recipeService;
 
    public RecipeController(RecipeService recipeService){
-      this.recipeService = recipeService;
+
+       this.recipeService = recipeService;
+   }
+
+   @GetMapping
+   public List<RecipeDTO>getRecipes(){
+       return recipeService.getAllRecipes();//Метод получения всех рецептов
    }
    @GetMapping ("/{id}")
       public RecipeDTO getRecipe(@PathVariable("id")int id){
@@ -24,5 +33,14 @@ import pro.sky.receptapp.service.RecipeService;
         return recipeService.addRecipe(recipe);
      }
 
+
+      @PutMapping("/{id}")
+      public  static RecipeDTO editRecipe(@PathVariable("id") int id,@RequestBody Recipe recipe){
+          return RecipeService.updateRecipe(id, recipe);//метод редактирования рецептов
+      }
+      @DeleteMapping("/{id}")
+      public RecipeDTO deleteRecipe(@PathVariable("id") int id){
+          return recipeService.deleteById(id);   //метод удаления рецептов
+      }
 
 }

@@ -1,14 +1,14 @@
-package pro.sky.receptapp;
+package pro.sky.receptapp.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ReceptAppApplication {
+public class RecipesApplication {
 
     public static void main(String[] args) {
 
-        SpringApplication.run(ReceptAppApplication.class, args);
+        SpringApplication.run(RecipesApplication.class, args);
     }
 
 }

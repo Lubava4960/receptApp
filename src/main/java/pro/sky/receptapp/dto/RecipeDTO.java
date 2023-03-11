@@ -28,10 +28,12 @@ public class RecipeDTO {
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public int getCookingTime() {
+
         return cookingTime;
     }
 

@@ -1,6 +1,7 @@
 GET http://localhost:8080/
 ###
 GET http://localhost:8080/recipe/3
+
 ###
 GET http://localhost:8080/info
 ###
@@ -8,12 +9,12 @@ POST http://localhost:8080/recipe
 Content-Type: application/json
 
 {
-  "Title": "кулебяка ",
-  "cookingTime": "30",
+  "Title": "пюре",
+  "cookingTime": "50",
   "ingredients": [
     {
-      "title": "капуста",
-      "number": 1,
+      "title": "картофель",
+      "number": 400,
       "measure": "г"
     }
     ],
@@ -24,3 +25,7 @@ Content-Type: application/json
   ]
 
       }
+###
+GET http://localhost:8080/recipe
+###
+GET http://localhost:8080/recipe/0
